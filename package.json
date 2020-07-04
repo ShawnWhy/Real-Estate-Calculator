@@ -2,22 +2,12 @@
   "name": "real-estate-calculator",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "api.js",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "compression": "^1.7.4",
-    "dotenv": "^8.2.0",
+    "axios": "^0.19.2",
     "express": "^4.17.1",
-    "express-session": "^1.17.1",
     "mongoose": "^5.9.21",
-    "mysql2": "^2.1.0",
-    "passport": "^0.4.1",
-    "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0",
-    "path": "^0.12.7",
-    "sequelize": "^6.3.0",
-    "socket.io": "^2.3.0",
-    "websocket": "^1.0.31"
+    "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {
