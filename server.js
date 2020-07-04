@@ -75,7 +75,7 @@ app.use(routes)
 
 
 // Run server
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/LingoLabs", { useCreateIndex: true,
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/expensecalc", { useCreateIndex: true,
 useNewUrlParser: true,useUnifiedTopology: true, useFindAndModify:false},);
 // var mongooseConnectString = mongodbUri.formatMongoose(uri);
 // mongoose.connect(mongooseConnectString,  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
