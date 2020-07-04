@@ -19,6 +19,13 @@ app.use(
 // app.use(passport.initialize());
 // app.use(passport.session());
 
+app.use(express.static("expensecalculator/build"));
+
+
+app.get("*", (req, res) => {
+     res.sendFile(path.join(__dirname,  "expensecalculator/build", "index.html"));
+ });
+
 // require("./routes/apiRoutes")(app);
 // require("./routes/htmlRoutes")(app);
 var syncOptions = { force: false };
