@@ -17,7 +17,7 @@ const io = require("socket.io").listen(server, {
 const PORT = process.env.PORT || 3001 ;
 
 
-//  if (process.env.NODE_ENV === "production") {
+ if (process.env.NODE_ENV === "production") {
 
   app.use(express.static("expensecalculator/build"));
 
@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 3001 ;
        res.sendFile(path.join(__dirname,  "expensecalculator/build", "index.html"));
    });
 
-  // }
+  }
 
 // app.use(express.static("LingoLabsClient/build"));
 // app.get('/', function(req, res,next) {
