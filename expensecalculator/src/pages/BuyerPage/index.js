@@ -79,8 +79,8 @@ function BuyerPage() {
          var name = values[0]
          var percent= parseFloat(values[1]);
          console.log(percent);
-         var taxValue=userProfile.propertyValue*percent/100
-         var total=userProfile.propertyValue+taxValue
+         var taxValue=parseFloat(userProfile.propertyValue*(percent/100)).toFixed(2)
+         var total=parseFloat(userProfile.propertyValue)+parseFloat(taxValue)
          
         SetUserProfile({
             ...userProfile,locality:name,
@@ -107,14 +107,27 @@ function BuyerPage() {
 
         function handleInputChange(event) {
             const { name, value } = event.target;
-            // console.log(name, value);
-            if(userProfile.propertyValue&&userProfile.propertyTaxPercent){
-                var taxValue=userProfile.propertyValue*userProfile.propertyTaxPercent/100
-                var total=userProfile.propertyValue+taxValue
-                }
-            SetUserProfile({...userProfile,propertyTaxValue:taxValue,
-                totalValue:total,[name]: value})
-          };
+            SetUserProfile({...userProfile,
+                 [name]: value})
+            
+        //    setInterval(() => {
+        //     if(userProfile.propertyTaxPercent&&userProfile.propertyValue){
+        //         var taxValue=userProfile.propertyValue*userProfile.propertyTaxPercent/100
+        //         var total=parseFloat(userProfile.propertyValue)+parseFloat(taxValue)
+               
+                
+        //             SetUserProfile({...userProfile,propertyTaxValue:taxValue,
+        //                 totalValue:total, [name]: value})
+                    
+            
+                
+        //         }
+               
+        //    }, 200);
+
+        
+            }
+
 
 const deployCounties=function(event){
     event.preventDefault();
@@ -177,7 +190,7 @@ return(
               <div>the property is marked at {userProfile.propertyValue} dollars</div>
               <div>the property is in {userProfile.state} and in the locality of {userProfile.locality}</div>
               <div>you will have to pay {userProfile.propertyTaxPercent} percent in taxes , which will be amounted to { userProfile.propertyTaxValue} in dollars</div>
-              <div>the total will be {userProfile.totalValue} dollars</div>
+              <div>the total amount paid this year will be {userProfile.totalValue} dollars</div>
               </div>
           </div>
   </div>

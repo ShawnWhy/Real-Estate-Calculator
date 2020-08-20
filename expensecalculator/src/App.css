@@ -19,3 +19,8 @@ select{
 
 visibility:visible
 }
+
+div{
+  text-align:center;
+  margin:auto
+}
